@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment5</title>
+    <!-- -----------------daisy ui------------------------ -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- ------------------------------------------------- -->
+  </head>
+  <body class="pt-10 bg-[#F4F7FF]">
+    <header>
+      <nav class="flex justify-center items-center mt-5">
+        <div
+          class="navbar w-[1200px] bg-base-100 shadow-sm flex justify-between"
+        >
+          <div class="flex gap-2 justify-center items-center">
+            <img src="images/logo.png" alt="logo" />
+            <a class="btn btn-ghost text-xl"
+              >Dev<span class="text-black font-bold text-2xl">Board</span></a
+            >
+          </div>
+          <div class="flex items-center justify-center gap-5">
+            <div
+              class="flex items-center justify-center gap-2 w-[90px] h-[48px] bg-[#F4F7FF] rounded-full"
+            >
+              <img class="w-[20px] h-[20px]" src="images/checkbox.png" alt="box">
+              <span id="total_task_count" class="text-2xl">23</span>
+            </div>
+            <div
+              class="w-[60px] h-[60px] bg-[#F4F7FF] rounded-full flex justify-center items-center"
+            >
+              <button id="theme_btn" class="cursor-pointer"><img src="images/theme-btn.png" alt="theme" /></button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="w-full mt-5">
+      <div class="flex justify-center gap-6">
+        <div class="main_content bg-base-100 shadow-sm p-[24px] w-[900px]">
+          <nav class="flex justify-between items-center">
+            <div
+              class="card1 flex pt-[32px] pr-[20px] pb-[25px] pl-[32px] bg-[#F4F7FF] justify-center items-center gap-6"
+            >
+              <div
+                class="w-[45px] h-[45px] bg-white rounded-full flex justify-center items-center"
+              >
+                <img class="w-[20px] h-[20px]" src="images/checkbox.png" alt="box">
+              </div>
+              <div>
+                <p>Task Assigned</p>
+                <span id="task_count" class="text-black font-bold text-xl">06</span>
+              </div>
+            </div>
+            <div
+              id="move_blog_page"
+              class=" cursor-pointer card2 flex pt-[12px] pr-[85px] pb-[12px] pl-[40px] bg-linear-to-r from-[#3752FD] to-[#9BA8F8] justify-center items-center gap-6"
+            >
+              <img src="images/board.png" alt="img" />
+              <div>
+                <p class="text-white">Discover Something</p>
+                <span class="text-white">New Today!</span>
+              </div>
+            </div>
+            <div
+              class="card2 flex pt-[32px] pr-[20px] pb-[25px] pl-[32px] bg-[#F4F7FF] justify-center items-center gap-6"
+            >
+              <div
+                class="w-[45px] h-[45px] bg-white rounded-full flex justify-center items-center"
+              >
+                <img src="images/calender.png" alt="img" />
+              </div>
+              <div>
+                <span id="real_time_date" class=" block w-[112px] text-black font-bold"></span>
+              </div>
+            </div>
+          </nav>
+          <span
+            class="block border-[1px] border-dashed border-[#3752FD] opacity-[20%] my-6"
+          ></span>
+          <div class="main_cards grid grid-cols-3 grid-rows-2 gap-[36px]">
+            <div class="main_card1 p-[24px] bg-[#F4F7FF]">
+              <div class="header_text">
+                <p class="w-[80px] h-[30px] bg-white rounded-[4px] flex justify-center items-center">ShopEase</p>
+                <h2 class=" card_hading my-4 text-black font-bold">Fix Mobile Button Issue</h2>
+                <span class="block w-[230px] p-[4px] bg-white rounded-[4px]"
+                  >Debug using Chrome DevTools, check for overlapping...</span
+                >
+              </div>
+              <span
+                class="block border-[1px] border-dashed border-[#3752FD] opacity-[20%] my-2"
+              ></span>
+              <div class="footer_text flex justify-between items-center">
+                <div class="text">
+                  <span>Deadline</span>
+                  <p class="real_time_date text-black font-bold text-sm"></p>
+                </div>
+                <div
+                  class="button"
+                >
+                  <button class="add_history text-white font-bold text-sm cursor-pointer py-[6px] px-[10px] bg-[#3752FD] rounded-[6px]">
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="main_card1 p-[24px] bg-[#F4F7FF]">
+              <div class="header_text">
+                <p class="w-[80px] h-[30px] bg-white rounded-[4px] flex justify-center items-center">CloudSync</p>
+                <h2 class=" card_hading my-4 text-black font-bold">Add Dark Mode</h2>
+                <span class="block w-[230px] p-[4px] bg-white rounded-[4px]"
+                  >Store the user's preference in localStorage, update CSS vari....</span
+                >
+              </div>
+              <span
+                class="block border-[1px] border-dashed border-[#3752FD] opacity-[20%] my-2"
+              ></span>
+              <div class="footer_text flex justify-between items-center">
+                <div class="text">
+                  <span>Deadline</span>
+                  <p class="real_time_date text-black font-bold text-sm"></p>
+                </div>
+                <div
+                  class="button "
+                >
+                  <button class="add_history text-white font-bold text-sm cursor-pointer py-[6px] px-[10px] bg-[#3752FD] rounded-[6px]">
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="main_card1 p-[24px] bg-[#F4F7FF]">
+              <div class="header_text">
+                <p class="w-[80px] h-[30px] bg-white rounded-[4px] flex justify-center items-center">SwiftPay</p>
+                <h2 class="card_hading my-4 text-black font-bold">Optimize  Home page </h2>
+                <span class="block w-[230px] p-[4px] bg-white rounded-[4px]"
+                  >Debug using Chrome DevTools, check for overlapping...</span
+                >
+              </div>
+              <span
+                class="block border-[1px] border-dashed border-[#3752FD] opacity-[20%] my-2"
+              ></span>
+              <div class="footer_text flex justify-between items-center">
+                <div class="text">
+                  <span>Deadline</span>
+                  <p class="real_time_date text-black font-bold text-sm"></p>
+                </div>
+                <div
+                  class="button"
+                >
+                  <button class="add_history text-white font-bold text-sm cursor-pointer py-[6px] px-[10px] bg-[#3752FD] rounded-[6px]">
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="main_card1 p-[24px] bg-[#F4F7FF]">
+              <div class="header_text">
+                <p class="w-[80px] h-[30px] bg-white rounded-[4px] flex justify-center items-center">Meta</p>
+                <h2 class="card_hading my-4 text-black font-bold">Add new emoji 🤲</h2>
+                <span class="block w-[230px] p-[4px] bg-white rounded-[4px]"
+                  >Debug using Chrome DevTools, check for overlapping...</span
+                >
+              </div>
+              <span
+                class="block border-[1px] border-dashed border-[#3752FD] opacity-[20%] my-2"
+              ></span>
+              <div class="footer_text flex justify-between items-center">
+                <div class="text">
+                  <span>Deadline</span>
+                  <p class="real_time_date text-black font-bold text-sm"></p>
+                </div>
+                <div
+                  class="button"
+                >
+                  <button class="add_history text-white font-bold text-sm cursor-pointer py-[6px] px-[10px] bg-[#3752FD] rounded-[6px]">
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="main_card1 p-[24px] bg-[#F4F7FF]">
+              <div class="header_text">
+                <p class="w-[100px] h-[30px] bg-white rounded-[4px] flex justify-center items-center">Google LLC</p>
+                <h2 class="card_hading my-4 text-black font-bold">Integrate OpenAI API </h2>
+                <span class="block w-[230px] p-[4px] bg-white rounded-[4px]"
+                  >Debug using Chrome DevTools, check for overlapping...</span
+                >
+              </div>
+              <span
+                class="block border-[1px] border-dashed border-[#3752FD] opacity-[20%] my-2"
+              ></span>
+              <div class="footer_text flex justify-between items-center">
+                <div class="text">
+                  <span>Deadline</span>
+                  <p class=" real_time_date text-black font-bold text-sm"></p>
+                </div>
+                <div
+                  class="button"
+                >
+                  <button class="add_history text-white font-bold text-sm cursor-pointer py-[6px] px-[10px] bg-[#3752FD] rounded-[6px]">
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="main_card1 p-[24px] bg-[#F4F7FF]">
+              <div class="header_text">
+                <p class="w-[80px] h-[30px] bg-white rounded-[4px] flex justify-center items-center">Glassdoar</p>
+                <h2 class="card_hading my-4 text-black font-bold">Improve Job searching </h2>
+                <span class="block w-[230px] p-[4px] bg-white rounded-[4px]"
+                  >Debug using Chrome DevTools, check for overlapping...</span
+                >
+              </div>
+              <span
+                class="block border-[1px] border-dashed border-[#3752FD] opacity-[20%] my-2"
+              ></span>
+              <div class="footer_text flex justify-between items-center">
+                <div class="text">
+                  <span>Deadline</span>
+                  <p class=" real_time_date text-black font-bold text-sm"></p>
+                </div>
+                <div
+                  class="button"
+                >
+                  <button class="add_history text-white font-bold text-sm cursor-pointer py-[6px] px-[10px] bg-[#3752FD] rounded-[6px]">
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ------------history---------- -->
+        <div
+          class="history pt-[24px] pr-[17px] pl-[31px] bg-base-100 shadow-sm w-[270px]"
+        >
+          <div class="history_title flex flex-col justify-center items-center gap-3">
+            <div class="log flex gap-2">
+              <img src="images/activity.png" alt="log" />
+              <p class="text-black font-bold">Activity Log</p>
+            </div>
+            <button id="clear_history" class="cursor-pointer py-[6px] px-[10px] bg-[#3752FD] rounded-[6px] text-white font-bold">Clear History</button>
+          </div>
+          <div id="history_content" class="history-content">
+
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script/toggle.js"></script>
+    <script src="script/script.js"></script>
+  </body>
+</html>
