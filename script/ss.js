@@ -1,29 +1,3 @@
-// -------------------------randomly theme change
-document
-  .getElementById("theme_btn")
-  .addEventListener("click", function (event) {
-    document.body.style.backgroundColor = generateRandomColor();
-  });
-function generateRandomColor() {
-  let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-  return randomColor;
-}
-
-// -------------------- real time date and time-------------
-let realTimeDate=document.getElementById("real_time_date");
-let dateElements = document.getElementsByClassName("real_time_date");
-let today = new Date();
-let dayName = today.toLocaleString('default', { weekday: 'long' });
-let day = `${today.getDate() < 10 ? "0" : ""}${today.getDate()}`;
-let month = today.toLocaleString('default', { month: 'long' });
-let year = today.getFullYear();
-realTimeDate.textContent = `${dayName} ${month} ${day} ${year}`;
-let formattedDate = ` ${month} ${day} ${year}`;
-
-for (let i = 0; i < dateElements.length; i++) {
-    dateElements[i].textContent = formattedDate;
-}
-// ------------------------------------------------------------------------click on card btn
 //------------------ Get all elements with the class name "add_history"
 let buttons = document.getElementsByClassName("add_history");
 
@@ -70,22 +44,20 @@ for (let i = 0; i < buttons.length; i++) {
         div.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.2)";
         div.style.padding = "8px";
         div.style.marginTop = "10px";
+        div.style.borderRadius = "5px";
+        div.style.backgroundColor = "#f9f9f9";
+        div.style.color = "#333";
+        div.style.fontFamily = "Arial, sans-serif";
+        div.style.fontSize = "14px";
+        div.style.border = "1px solid #ccc";
+
         historyContent.appendChild(div);
       }
     }
+
     // ------------------ Last button click alert
     if (i === buttons.length - 1) {
       alert("Congratulations!!! You have completed all the current tasks.");
     }
   });
 }
-// ------------------------------------------------------------------------------------------------------
-// --------------------clear history---------------
-document.getElementById("clear_history").addEventListener('click', function() {
-    const historyContent = document.getElementById("history_content");
-    if (historyContent.children.length > 0) {
-        historyContent.removeChild(historyContent.firstChild);
-    } else {
-        return;
-    }
-});
