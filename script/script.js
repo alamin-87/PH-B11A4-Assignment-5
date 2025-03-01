@@ -24,27 +24,27 @@ for (let i = 0; i < dateElements.length; i++) {
 }
 
 
-// Get all elements with the class name "add_history"
+//------------------ Get all elements with the class name "add_history"
 let buttons = document.getElementsByClassName("add_history");
 
-// Loop through each button and add an event listener
+//------------------ Loop through each button and add an event listener
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
-        // Show an alert message
+        //----------- Show an alert message
         alert('Board Updated Successfully');
 
-        // Disable the button after clicking
+        //---------- Disable the button after clicking
         this.disabled = true;
         this.style.backgroundColor = "#9BA8F8";
         this.style.cursor = "not-allowed"; 
 
-        // Get and update task count
+        //------------ Get and update task count
         const taskCount = document.getElementById("task_count").innerText;
         const convertTaskCount = parseInt(taskCount);
         const resultCount = convertTaskCount - 1;
         document.getElementById("task_count").innerText = resultCount;
 
-        // Get and update total task count
+        //------------ Get and update total task count
         const totalTaskCount = document.getElementById("total_task_count").innerText;
         const totalConvertTaskCount = parseInt(totalTaskCount);
         const totaalResultCount = totalConvertTaskCount + 1;
@@ -54,10 +54,10 @@ for (let i = 0; i < buttons.length; i++) {
         const cardHeadings = document.getElementsByClassName("card_hading");
         const historyContent = document.getElementById('history_content');
 
-        // Ensure only one entry is added per click (using only the first card_hading element)
+        //-------------- delete history element one by one 
         if (cardHeadings.length > 0) {
             const div = document.createElement('div');
-            const currentTime = new Date().toLocaleTimeString();  // Get real-time date and time
+            const currentTime = new Date().toLocaleTimeString(); 
             div.innerText = `You have completed the task: ${cardHeadings[0].innerText} at ${currentTime}`;
             div.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.2)";
             div.style.padding='8px';
@@ -65,7 +65,7 @@ for (let i = 0; i < buttons.length; i++) {
             historyContent.appendChild(div);
         }
 
-        // Check if it's the last button clicked
+        // ------------------last btn click alert
         if (i === buttons.length - 1) {
             alert("Congratulations!!! You have completed all the current tasks.");
         }
