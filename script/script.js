@@ -82,10 +82,12 @@ for (let i = 0; i < buttons.length; i++) {
 // ------------------------------------------------------------------------------------------------------
 // --------------------clear history---------------
 document.getElementById("clear_history").addEventListener('click', function() {
-    const historyContent = document.getElementById("history_content");
-    if (historyContent.children.length > 0) {
-        historyContent.removeChild(historyContent.firstChild);
-    } else {
-        return;
-    }
+  const historyContent = document.getElementById("history_content");
+
+  // Check if there are any children to remove
+  if (historyContent.children.length > 0) {
+      historyContent.removeChild(historyContent.children[0]);  // Removes the first child
+  } else {
+      return; // If no children exist, exit the function
+  }
 });
